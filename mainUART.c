@@ -73,10 +73,10 @@ void uart0_Init (){
     // 4. Write the desired serial parameters to the UARTLCRH register (in this case, a value of 0x0000.0060)
     UART0->LCRH = (0x3<<5)|(1<<4);     // 8-bit, no parity, 1-stop bit
     
-    // 5. Configure the UART clock source by writing to the UARTCC register
-    UART0->CC = 0x0;          
+    // 5. Configure the UART clock source by writing to the UARTCC register //16 MHZ
+    UART0->CC = 0x05;          
 
-    // 6. Optionally, configure the µDMA channel (see “Micro Direct Memory Access (µDMA)” on page 585)
+    // 6. Optionally, configure the ÂµDMA channel ( â€œMicro Direct Memory Access (ÂµDMA)â€ on page 585)
     // and enable the DMA option(s) in the UARTDMACTL register
     
     // 7. Enable the UART by setting the UARTEN bit in the UARTCTL register.
